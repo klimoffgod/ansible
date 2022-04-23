@@ -16,4 +16,7 @@
         cmd: docker run -d -t --entrypoint /entrypoint.sh  aster18
     - name: run mariadb from dockerhub
       ansible.builtin.shell:
-        cmd: docker run --name mariadb -e ALLOW_EMPTY_PASSWORD=yes bitnami/mariadb:latest
+        cmd: docker run -d --name mariadb -e ALLOW_EMPTY_PASSWORD=yes bitnami/mariadb:latest
+    - name: run docker aster18 from build
+      ansible.builtin.shell:
+        cmd: docker run -d -t --entrypoint /entrypoint.sh  aster18
