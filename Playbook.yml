@@ -47,7 +47,7 @@
 
     - name: build docker from git
       ansible.builtin.shell:
-        cmd: aptitude upgrade && cd ansible &&  docker build . -t aster18
+        cmd: cd ansible &&  docker build . -t aster18
 
     - name: run  docker-compose mariadb from dockerhub 
       ansible.builtin.shell:
