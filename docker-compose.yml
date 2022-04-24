@@ -1,0 +1,17 @@
+version: '3'
+
+networks:
+  app-tier:
+    driver: bridge
+
+services:
+  mariadb:
+    image: 'bitnami/mariadb:latest'
+    environment:
+      - MARIADB_ROOT_PASSWORD=aster123
+    networks:
+      - app-tier
+  aster18:
+    image: 'aster18'
+    networks:
+      - app-tier
