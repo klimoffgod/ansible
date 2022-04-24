@@ -10,13 +10,10 @@
         cmd: git clone https://github.com/klimoffgod/ansible.git
     - name: build docker from git
       ansible.builtin.shell:
-        cmd: docker build . -t aster18
+        cmd: cd ansible &&  docker build . -t aster18
     - name: run docker aster18 from build
       ansible.builtin.shell:
-        cmd: docker run -d -it --entrypoint /entrypoint.sh  aster18
+        cmd: docker run -d -t --entrypoint /entrypoint.sh  aster18
     - name: run mariadb from dockerhub
       ansible.builtin.shell:
         cmd: docker run -d --name mariadb -e ALLOW_EMPTY_PASSWORD=yes bitnami/mariadb:latest
-    - name: run docker aster18 from build
-      ansible.builtin.shell:
-        cmd: docker run -d -it --entrypoint /bin/bash  aster18
