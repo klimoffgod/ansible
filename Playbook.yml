@@ -6,7 +6,7 @@
 
     - name: apt update and install requirements
       ansible.builtin.shell:
-        cmd: apt update && apt install aptitude ca-certificates curl lsb-release net-tools mc apt-transport-https gnupg2 software-properties-common git
+        cmd: apt update && apt install -y aptitude ca-certificates curl lsb-release net-tools mc apt-transport-https gnupg2 software-properties-common git
 
     - name: add repo and key and install docker docker-compose
       ansible.builtin.shell:
