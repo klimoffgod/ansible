@@ -1,6 +1,0 @@
----
-create_containers: 1
-default_container_name: asterisk
-default_container_image: klimoff/debian11:aster18
-default_container_command: 
-docker_users: klimoff
